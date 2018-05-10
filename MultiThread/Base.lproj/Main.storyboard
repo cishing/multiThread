@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UXl-C6-iMi">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MultiThread-->
+        <scene sceneID="l8q-4O-r6i">
+            <objects>
+                <tableViewController id="pTm-9V-ju4" customClass="TableViewController" customModule="MultiThread" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tTY-HS-Ufp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="pTm-9V-ju4" id="aT5-0r-qkD"/>
+                            <outlet property="delegate" destination="pTm-9V-ju4" id="NjR-mp-SQ6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="MultiThread" id="VD6-uB-Vpw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXB-Fx-myk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1306" y="103"/>
+        </scene>
+        <!--Thread-->
+        <scene sceneID="e37-kl-WLQ">
+            <objects>
+                <viewController storyboardIdentifier="ThreadViewController" id="TCW-K8-Met" customClass="ThreadViewController" customModule="MultiThread" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bxK-Bb-FBr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j79-hP-VeT">
+                                <rect key="frame" x="5" y="60" width="310" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jt9-Bv-xc2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="initWithTarget方式创建"/>
+                                <connections>
+                                    <action selector="initWithTarget:" destination="TCW-K8-Met" eventType="touchUpInside" id="Ffk-xL-1WM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1G-uo-BhV">
+                                <rect key="frame" x="0.0" y="140" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bXa-bC-jRo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="detachNewThreadSelector显式创建"/>
+                                <connections>
+                                    <action selector="detachNewThreadSelector:" destination="TCW-K8-Met" eventType="touchUpInside" id="wgc-LB-olH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAD-1D-aZx">
+                                <rect key="frame" x="0.0" y="220" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UAk-Pc-Sxz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="performSelectorInBackground隐式创建"/>
+                                <connections>
+                                    <action selector="performSelectorInBackground:" destination="TCW-K8-Met" eventType="touchUpInside" id="b4U-yb-VKr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCp-Dw-XgX">
+                                <rect key="frame" x="0.0" y="300" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2OP-6d-k6c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="cancelAndExit取消和退出"/>
+                                <connections>
+                                    <action selector="cancelAndExit:" destination="TCW-K8-Met" eventType="touchUpInside" id="2PS-yo-Cqc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZA-E3-sbc">
+                                <rect key="frame" x="0.0" y="380" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZQo-Sy-Bsv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="子线程耗时操作 主线程UI更新"/>
+                                <connections>
+                                    <action selector="childThreadToMain:" destination="TCW-K8-Met" eventType="touchUpInside" id="RU1-CS-OTC"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OlM-77-ooh">
+                                <rect key="frame" x="0.0" y="420" width="320" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="148" id="TRY-sP-DUw"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="OlM-77-ooh" firstAttribute="trailing" secondItem="2hR-gb-WlK" secondAttribute="trailing" id="7US-fB-u7C"/>
+                            <constraint firstItem="OlM-77-ooh" firstAttribute="leading" secondItem="2hR-gb-WlK" secondAttribute="leading" id="8tP-fV-iDI"/>
+                            <constraint firstItem="b1G-uo-BhV" firstAttribute="top" secondItem="j79-hP-VeT" secondAttribute="bottom" constant="50" id="DEW-ae-C4B"/>
+                            <constraint firstItem="LAD-1D-aZx" firstAttribute="trailing" secondItem="2hR-gb-WlK" secondAttribute="trailing" id="Fyh-VL-YEQ"/>
+                            <constraint firstItem="hZA-E3-sbc" firstAttribute="top" secondItem="BCp-Dw-XgX" secondAttribute="bottom" constant="50" id="Lpf-65-zGR"/>
+                            <constraint firstItem="j79-hP-VeT" firstAttribute="leading" secondItem="2hR-gb-WlK" secondAttribute="leading" constant="5" id="R0d-2v-Kn2"/>
+                            <constraint firstItem="2hR-gb-WlK" firstAttribute="trailing" secondItem="BCp-Dw-XgX" secondAttribute="trailing" id="R5x-mF-AMN"/>
+                            <constraint firstItem="LAD-1D-aZx" firstAttribute="leading" secondItem="2hR-gb-WlK" secondAttribute="leading" id="RiD-g3-zYZ"/>
+                            <constraint firstItem="j79-hP-VeT" firstAttribute="top" secondItem="2hR-gb-WlK" secondAttribute="top" constant="40" id="S5I-7x-Aje"/>
+                            <constraint firstItem="OlM-77-ooh" firstAttribute="top" secondItem="hZA-E3-sbc" secondAttribute="bottom" constant="10" id="VoO-Zf-RZP"/>
+                            <constraint firstItem="hZA-E3-sbc" firstAttribute="leading" secondItem="2hR-gb-WlK" secondAttribute="leading" id="Y7q-yr-zr8"/>
+                            <constraint firstItem="BCp-Dw-XgX" firstAttribute="leading" secondItem="2hR-gb-WlK" secondAttribute="leading" id="b7R-wY-0EF"/>
+                            <constraint firstItem="2hR-gb-WlK" firstAttribute="trailing" secondItem="hZA-E3-sbc" secondAttribute="trailing" id="fzp-Js-hmy"/>
+                            <constraint firstItem="b1G-uo-BhV" firstAttribute="leading" secondItem="2hR-gb-WlK" secondAttribute="leading" id="qre-1E-Hw7"/>
+                            <constraint firstItem="LAD-1D-aZx" firstAttribute="top" secondItem="b1G-uo-BhV" secondAttribute="bottom" constant="50" id="u3O-T3-2e0"/>
+                            <constraint firstItem="2hR-gb-WlK" firstAttribute="trailing" secondItem="j79-hP-VeT" secondAttribute="trailing" constant="5" id="v6q-63-P1g"/>
+                            <constraint firstItem="b1G-uo-BhV" firstAttribute="trailing" secondItem="2hR-gb-WlK" secondAttribute="trailing" id="wgJ-pM-w16"/>
+                            <constraint firstItem="BCp-Dw-XgX" firstAttribute="top" secondItem="LAD-1D-aZx" secondAttribute="bottom" constant="50" id="yBu-qZ-EXQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2hR-gb-WlK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Thread" id="GAp-3f-qa7"/>
+                    <connections>
+                        <outlet property="showImgView" destination="OlM-77-ooh" id="7no-ad-9Ep"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcb-cr-rZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2299" y="-119"/>
+        </scene>
+        <!--GCD-->
+        <scene sceneID="Nfj-YM-PP7">
+            <objects>
+                <tableViewController storyboardIdentifier="GCDTableViewController" id="3hY-Fi-GjV" customClass="GCDTableViewController" customModule="MultiThread" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dea-gE-KVC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="3hY-Fi-GjV" id="khA-RW-01e"/>
+                            <outlet property="delegate" destination="3hY-Fi-GjV" id="8TH-zv-ksT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="GCD" id="yFN-Bd-xam"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tbr-mn-dvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2299" y="596"/>
+        </scene>
+        <!--Operation-->
+        <scene sceneID="13E-Ao-i14">
+            <objects>
+                <tableViewController storyboardIdentifier="OperationTableViewController" id="PzK-1f-B8E" customClass="OperationTableViewController" customModule="MultiThread" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HK1-lC-Ulj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="PzK-1f-B8E" id="cFT-Vf-gBi"/>
+                            <outlet property="delegate" destination="PzK-1f-B8E" id="PGB-C6-BjL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Operation" id="uxQ-yR-8jE"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICK-fZ-09k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2314" y="1375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4WH-Un-liJ">
+            <objects>
+                <navigationController id="UXl-C6-iMi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V9v-yY-OzJ">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pTm-9V-ju4" kind="relationship" relationship="rootViewController" id="V1e-Ym-fGg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tu9-YF-fxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="354" y="103"/>
+        </scene>
+    </scenes>
+</document>
